@@ -1,0 +1,318 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+// variables
+$images-path: "../images";
+$fonts-path: "../fonts";
+
+// project imports
+@import "projects.scss";
+
+@font-face {
+  font-family: MyriadProRegular;
+  src: url(#{$fonts-path}/MyriadPro-Regular.otf);
+}
+
+@font-face {
+  font-family: MyriadProItalic;
+  src: url(#{$fonts-path}/MyriadPro-It.otf);
+}
+
+@font-face {
+  font-family: MyriadProBold;
+  src: url(#{$fonts-path}/MyriadPro-Bold.otf);
+}
+
+@font-face {
+  font-family: MyriadProBlack;
+  src: url(#{$fonts-path}/MyriadPro-Black.otf);
+}
+
+@font-face {
+  font-family: AvenirRoman;
+  src: url(#{$fonts-path}/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+  font-family: AvenirMedium;
+  src: url(#{$fonts-path}/AvenirLTStd-Medium.otf);
+}
+
+@font-face {
+  font-family: AvenirMediumOblique;
+  src: url(#{$fonts-path}/AvenirLTStd-MediumOblique.otf);
+}
+
+@font-face {
+  font-family: AvenirBlack;
+  src: url(#{$fonts-path}/AvenirLTStd-Black.otf);
+}
+
+@font-face {
+  font-family: ArnoProRegular;
+  src: url(#{$fonts-path}/ArnoPro-Regular.otf);
+}
+
+.container {
+    max-width: 700px;
+  }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+}
+
+#top-nav {
+  z-index: 10;
+  //position: fixed;
+  position: absolute;
+  top:0;
+  background: rgba(255,255,255,.0);
+  width: 100%;
+
+  .nav-element {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 0;
+    width: 20%;
+
+    a {
+      color: white;
+      font-size: 1.5em;
+      padding-bottom: 5px;
+      font-family: AvenirMedium;
+      text-decoration: none;
+      cursor: pointer;
+
+      &.active, &:hover, &:active {
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+}
+
+#main-image {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  position: relative;
+  top: 0;
+
+  &.home-image {
+    background-image: url(#{$images-path}/home-bg.png);
+  }
+
+  &.project-image {
+    background-image: url(#{$images-path}/project-bg.png);
+    background-position: bottom;
+  }
+
+  h1 {
+    color: white;
+    font-weight: normal;
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+    padding-top: 200px;
+    font-family: MyriadProBlack;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.3);
+  }
+}
+
+#main {
+  position: relative;
+  background: white;
+
+  .ragged-edge {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+
+    img {
+      max-height: 150px;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+    }
+  }
+
+  .intro {
+    font-size: 1.7em;
+    font-family: AvenirRoman;
+    margin: 50px 0;
+
+    &:first-letter {
+      float: left;
+      font-size: 3em;
+      line-height: 0.8;
+      margin-right: 5px;
+      margin-top: 12px;
+    }
+
+    b {
+      font-weight: normal;
+      font-family: AvenirBlack;
+    }
+  }
+
+  h2 {
+    font-weight: normal;
+    font-family: MyriadProBlack;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    position: relative;
+    padding-top: 15px;
+    margin: 50px 0 30px 0;
+
+    &:before {
+      content: '';
+      width: 200px;
+      height: 3px;
+      background: #CCCCCC;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  h3.link {
+    font-weight: normal;
+    font-family: MyriadProBlack;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom-color: #333;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+
+  article {
+    position: relative;
+
+    .text {
+      font-family: ArnoProRegular;
+      font-size: 1.5em;
+      width: 70%;
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    aside {
+      width: 30%;
+      right: 0;
+      position: absolute;
+      padding-left: 30px;
+
+      &.quote .inner {
+        font-family: MyriadProBold;
+        font-size: 1.4em;
+        border: 5px solid #333;
+        border-width: 5px 0;
+        line-height: 1;
+        padding: 8px 0;
+      }
+
+      &.caption .inner {
+        font-family: MyriadProItalic;
+        font-size: 1.2em;
+        border-top: 5px solid #666;
+        color: #666;
+        line-height: 1;
+        padding-top: 8px
+      }
+    }
+  }
+}
+
+#sub-header {
+  position: relative;
+  top: 0;
+
+  .ragged-edge {
+    opacity: .5;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+
+    img {
+      max-height: 150px;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+    }
+  }
+
+  .me {
+    position: absolute;
+    top: 0px;
+
+    img {
+      max-height: 350px;
+      position: absolute;
+      bottom: 0px;
+    }
+  }
+
+  .tagline {
+    position: absolute;
+    bottom: 0px;
+    padding: 0;
+    margin-bottom: 70px;
+
+    li {
+      background: #212D39;
+      color: white;
+      display: inline-block;
+      font-size: 2em;
+      font-family: AvenirMediumOblique;
+      margin-bottom: 2px;
+      line-height: 1;
+      padding: 0 5px;
+    }
+  }
+
+  .project-logo {
+    position: absolute;
+    bottom: 40px;
+    width: 120px;
+    border-radius: 120px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.5);
+  }
+
+  .project-title {
+    position: absolute;
+    bottom: 45px;
+    margin-left: 150px;
+    font-size: 5em;
+    font-family: MyriadProBlack;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.3);
+    color: white;
+  }
+}
+
+.footer-image {
+  margin-top: 50px;
+  width: 100%;
+}
+
+
+
+

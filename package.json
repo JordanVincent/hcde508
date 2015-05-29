@@ -1,7 +1,10 @@
 {
-  "name": "508",
+  "name": "hcde508",
   "version": "0.0.1",
   "main": "server.js",
+  "dependencies": {
+    "express": "~4.5.0"
+  },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "grunt": "^0.4.5",

@@ -6,7 +6,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 // variables
 $images-path: "../images";
-$fonts-path: "../fonts";
+$fonts-path: "./fonts";
 
 // project imports
 @import "projects.scss";

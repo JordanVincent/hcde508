@@ -20,13 +20,23 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="top-nav">
+    <div class="top-nav">
       <div class="container">
-        <div class="nav-element"><a href="" class="about-link">About</a></div><!--
-        --><div class="nav-element"><a href="" class="influences-link">Influences</a></div><!--
+        <div class="nav-element"><a href="#" class="about-link">Home</a></div><!--
+        --><div class="nav-element"><a href="#" class="influences-link">Influences</a></div><!--
         --><div class="nav-element"><a data-scroll href="#projects-anchor" class="projects-link">Projects</a></div><!--
-        --><div class="nav-element"><a href="" class="contact-link">Contact</a></div><!--
-        --><div class="nav-element"><a href="" class="resume-link">Resume</a></div>
+        --><div class="nav-element"><a href="#" class="contact-link">Contact</a></div><!--
+        --><div class="nav-element"><a href="#" class="resume-link">Resume</a></div>
+      </div>
+    </div>
+
+    <div class="top-nav sticky">
+      <div class="container">
+        <div class="nav-element"><a href="#" class="about-link">Home</a></div><!--
+        --><div class="nav-element"><a href="#" class="influences-link">Influences</a></div><!--
+        --><div class="nav-element"><a data-scroll href="#projects-anchor" class="projects-link">Projects</a></div><!--
+        --><div class="nav-element"><a href="#" class="contact-link">Contact</a></div><!--
+        --><div class="nav-element"><a href="#" class="resume-link">Resume</a></div>
       </div>
     </div>
 
@@ -38,8 +48,11 @@
       <div class="ragged-edge">
         <img src="images/large-ragged-back.png"/>
       </div>
-      <div class="me home-specific">
-        <img src="images/me.png"/>
+
+      <div class="container">
+        <div class="me home-specific">
+          <img src="images/me.png"/>
+        </div>
       </div>
 
       <div class="container">
@@ -62,8 +75,6 @@
         <div class="intro home-specific"><b>I am a builder.</b> When I was young, I wanted to become a renowned architect: building grandiose museums, bridges or skyscrapers. Every Christmas I would get LEGO sets and spend hours carefully assembling the pieces together.</div>
 
         <div class="intro project-specific"><b>Dinofit</b> is a fitness app that keeps users motivated. It incorporates gaming concepts such as challenges, levels and points. Training plans are generated everyday based on the user’s feedbacks and previous workouts. It will soon be available on Android!</div>
-
-        <h3 class="link home-specific"><a data-scroll href="#projects-anchor">Jump to projects</a></h3>
 
         <article class="home-specific">
 
@@ -97,7 +108,7 @@
           </aside>
 
           <div class="text">
-            <img src="images/project-bg.png">
+            <img src="images/project1.png">
 
             <p>No data is hosted on the user’s phone and the whole logic is provided by the backend server. The Android app and the Ruby on Rails server interact with each other using a REST API.</p>
 
@@ -108,7 +119,16 @@
           </aside>
 
           <div class="text">
-            <img src="images/project-bg.png">
+            <div class="row">
+              <div class="col-xs-6"><img src="images/project2.png"></div>
+              <div class="col-xs-6"><img src="images/project3.png"></div>
+            </div>
+          </div>
+
+          <div class="text">
+
+            <p>No data is hosted on the user’s phone and the whole logic is provided by the backend server. The Android app and the Ruby on Rails server interact with each other using a REST API.</p>
+
           </div>
 
         </article>
@@ -116,9 +136,15 @@
         <h2 id="projects-anchor" >Projects</h2>
 
         <div id="projects" class="row">
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #305274">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #305274"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 200 l 100 -50 l 50 50 l 150 -75 l 50 50 l 50 -25 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/dinofit-logo.png"/>
               </div>
               <h3>DinoFit</h3>
@@ -126,9 +152,15 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #EE5544">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #EE5544"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 200 v -50 l 50 -25 l 100 75 l 50 -25 l 100 25 l 100 -50 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/sixdoors-logo.png"/>
               </div>
               <h3>SixDoors</h3>
@@ -136,9 +168,15 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #253554">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #253554"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 200 v -50 l 50 -50 l 75 75 l 125 -25 l 100 25 l 50 -25 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/city-domination-logo.png"/>
               </div>
               <h3>City Domination</h3>
@@ -146,9 +184,15 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #97041E">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #97041E"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 180 l 100 -50 l 50 50 l 150 -75 l 50 50 l 50 -25 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/direct-matin-logo.png"/>
               </div>
               <h3>Direct Matin</h3>
@@ -156,9 +200,15 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #232323">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #232323"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 200 v -50 l 50 -25 l 100 75 l 50 -25 l 100 25 l 100 -50 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/veritabs-logo.png"/>
               </div>
               <h3>Veritabs</h3>
@@ -166,16 +216,21 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project">
-            <div class="inner">
-              <div class="caption" style="background-color: #E2E2E2">
+          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
+            <div class="svg-wrapper">
+              <div class="back" style="background-color: #BEBEBE"></div>
+              <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
+                <path stroke-miterlimit="3" stroke="none" fill="#FFFFFF" d="M 0 200 v -50 l 50 -50 l 75 75 l 125 -25 l 100 25 l 50 -25 V 400 H 0 Z"/>
+              </svg>
+            </div>
+            <div class="text-inner">
+              <div class="caption" >
                 <img src="images/smart-bricks-logo.png"/>
               </div>
               <h3>Smart Bricks</h3>
               <p>A web store for original LEGO sets. Developed everything by myself from the idea, to the product ready to ship!</p>
             </div>
           </a>
-
         </div>
 
       </div>
@@ -199,6 +254,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="bower_components/snap.svg/dist/snap.svg-min.js"></script>
     <!-- endbower -->
     <script src="bower_components/simplr-smoothscroll/lib/jquery.simplr.smoothscroll.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>

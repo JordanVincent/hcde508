@@ -18,15 +18,16 @@ $(document).scroll ->
 
   $('#sub-header').css('top', top/2);
 
-  # opacity = top/600;
+  if top > 600
+    navTop = 0
+    navOpacity = 1
+  else
+    navTop = -70
+    navOpacity = 0
 
-  # if top > 600
-  #   opacity = 1;
-
-  # $('#top-nav').css('background-color', "rgba(240, 240, 240, #{opacity})")
-  #$('#top-nav').css('background-color', "rgba(51, 51, 74, #{opacity})")
-
-
+  $('.top-nav.sticky').css
+    top: navTop
+    opacity: navOpacity
 
 $(window).bind 'hashchange', ->
   navigate()
@@ -64,3 +65,22 @@ navigate = ->
 
 $(document).ready ->
   navigate()
+
+  speed = 250
+  easing = mina.easeinout
+
+  $('.project').each (idx, el) ->
+    el = $(el)
+
+    s = Snap(el.find('svg')[0])
+    path = s.select('path')
+    return unless path
+    pathConfig =
+      from: path.attr( 'd' )
+      to: el.attr('data-path-hover')
+
+    el.on 'mouseenter', ->
+      path.animate( { 'path' : pathConfig.to }, speed, easing )
+
+    el.on 'mouseleave', ->
+      path.animate( { 'path' : pathConfig.from }, speed, easing )

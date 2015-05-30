@@ -8,103 +8,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 $images-path: "../images";
 $fonts-path: "./fonts";
 
-// project imports
+@import "font-faces.scss";
+@import "navigation.scss";
 @import "projects.scss";
-
-@font-face {
-  font-family: MyriadProRegular;
-  src: url(#{$fonts-path}/MyriadPro-Regular.otf);
-}
-
-@font-face {
-  font-family: MyriadProItalic;
-  src: url(#{$fonts-path}/MyriadPro-It.otf);
-}
-
-@font-face {
-  font-family: MyriadProBold;
-  src: url(#{$fonts-path}/MyriadPro-Bold.otf);
-}
-
-@font-face {
-  font-family: MyriadProBlack;
-  src: url(#{$fonts-path}/MyriadPro-Black.otf);
-}
-
-@font-face {
-  font-family: AvenirRoman;
-  src: url(#{$fonts-path}/AvenirLTStd-Roman.otf);
-}
-
-@font-face {
-  font-family: AvenirMedium;
-  src: url(#{$fonts-path}/AvenirLTStd-Medium.otf);
-}
-
-@font-face {
-  font-family: AvenirMediumOblique;
-  src: url(#{$fonts-path}/AvenirLTStd-MediumOblique.otf);
-}
-
-@font-face {
-  font-family: AvenirBlack;
-  src: url(#{$fonts-path}/AvenirLTStd-Black.otf);
-}
-
-@font-face {
-  font-family: ArnoProRegular;
-  src: url(#{$fonts-path}/ArnoPro-Regular.otf);
-}
+@import "mobile.scss";
 
 .container {
-    max-width: 800px;
-  }
-
-@media screen and (max-width: 480px) {
-  .container {
-    width: 100%;
-  }
-}
-
-.top-nav {
-  z-index: 10;
-  position: absolute;
-  transition: all .5s;
-  width: 100%;
-
-  &.sticky {
-    top: -70px;
-    position: fixed;
-    background: white;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .3);
-    opacity: 0;
-
-    .nav-element a {
-      color: black;
-      border: 0px solid black;
-    }
-  }
-
-  .nav-element {
-    display: inline-block;
-    text-align: center;
-    padding: 20px 0;
-    width: 20%;
-
-    a {
-      color: white;
-      font-size: 1.5em;
-      padding-bottom: 5px;
-      font-family: AvenirMedium;
-      text-decoration: none;
-      cursor: pointer;
-      border: 0px solid white;
-
-      &.active, &:hover, &:active {
-        border-bottom-width: 2px;
-      }
-    }
-  }
+  max-width: 800px;
 }
 
 #main-image {
@@ -325,6 +235,8 @@ $fonts-path: "./fonts";
   margin-top: 50px;
   width: 100%;
 }
+
+
 
 
 

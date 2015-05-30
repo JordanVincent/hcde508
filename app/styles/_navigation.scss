@@ -1,0 +1,40 @@
+.top-nav {
+  z-index: 10;
+  position: absolute;
+  transition: all .5s;
+  width: 100%;
+
+  &.sticky {
+    top: -70px;
+    position: fixed;
+    background: white;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .3);
+    opacity: 0;
+
+    .nav-element a {
+      color: black;
+      border: 0px solid black;
+    }
+  }
+
+  .nav-element {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 0;
+    width: 20%;
+
+    a {
+      color: white;
+      font-size: 1.5em;
+      padding-bottom: 5px;
+      font-family: AvenirMedium;
+      text-decoration: none;
+      cursor: pointer;
+      border: 0px solid white;
+
+      &.active, &:hover, &:active {
+        border-bottom-width: 2px;
+      }
+    }
+  }
+}

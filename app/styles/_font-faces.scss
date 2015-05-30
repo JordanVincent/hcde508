@@ -1,0 +1,44 @@
+@font-face {
+  font-family: MyriadProRegular;
+  src: url(#{$fonts-path}/MyriadPro-Regular.otf);
+}
+
+@font-face {
+  font-family: MyriadProItalic;
+  src: url(#{$fonts-path}/MyriadPro-It.otf);
+}
+
+@font-face {
+  font-family: MyriadProBold;
+  src: url(#{$fonts-path}/MyriadPro-Bold.otf);
+}
+
+@font-face {
+  font-family: MyriadProBlack;
+  src: url(#{$fonts-path}/MyriadPro-Black.otf);
+}
+
+@font-face {
+  font-family: AvenirRoman;
+  src: url(#{$fonts-path}/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+  font-family: AvenirMedium;
+  src: url(#{$fonts-path}/AvenirLTStd-Medium.otf);
+}
+
+@font-face {
+  font-family: AvenirMediumOblique;
+  src: url(#{$fonts-path}/AvenirLTStd-MediumOblique.otf);
+}
+
+@font-face {
+  font-family: AvenirBlack;
+  src: url(#{$fonts-path}/AvenirLTStd-Black.otf);
+}
+
+@font-face {
+  font-family: ArnoProRegular;
+  src: url(#{$fonts-path}/ArnoPro-Regular.otf);
+}

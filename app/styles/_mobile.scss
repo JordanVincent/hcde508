@@ -3,6 +3,73 @@
     width: 100%;
   }
 
+  .top-nav-mobile {
+    height: 50px;
+    position: fixed;
+    top: -50px;
+    width: 100%;
+    z-index: 10;
+    transition: top .3s, opacity .3s;
+    opacity: 0;
+
+    &.open {
+      height: 100%;
+    }
+
+    .inner {
+      transition: height .5s;
+      background: $purple;
+      height: 50px;
+      padding: 15px;
+      font-family: MyriadProBold;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      .title {
+        height: 20%;
+        transition: all .5s;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      ul {
+        font-size: 1.4em;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        transition: height .5s, opacity .3s;
+        height: 0;
+        opacity: 0;
+        display: none;
+        li {
+          position: relative;
+          height: 20%;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+      &.open {
+        height: 60%;
+        .title {
+          font-size: 1.8em;
+        }
+        ul {
+          height: 80%;
+          opacity: 1;
+        }
+      }
+    }
+
+    svg {
+      width: 100%;
+      fill: $purple;
+      display: none;
+    }
+  }
+
   #main-image h1 {
     font-size: 3em;
     padding-top: 60px;

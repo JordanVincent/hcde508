@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="top-nav sticky ">
+    <div class="top-nav sticky hidden-xs">
       <div class="container">
         <div class="nav-element"><a href="#" class="about-link">Home</a></div><!--
         --><div class="nav-element"><a href="#" class="influences-link">Influences</a></div><!--
@@ -38,6 +38,22 @@
         --><div class="nav-element"><a href="#" class="contact-link">Contact</a></div><!--
         --><div class="nav-element"><a href="#" class="resume-link">Resume</a></div>
       </div>
+    </div>
+
+    <div class="top-nav-mobile visible-xs" data-path-click="M 0 0 v 50 l 25 -25 l 50 50 l 25 -12.5 l 25 12.5 l 75 -75 l 25 25 l 12.5 -12.5 l 62.5 62.5 l 50 -50 l 50 25 V 0 H 0 Z">
+      <div class="inner">
+        <div class="title">Menu</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Influences</a></li>
+          <li><a data-scroll href="#projects-anchor">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Resume</a></li>
+        </ul>
+      </div>
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMax slice" >
+        <path stroke-miterlimit="3" stroke="none" d="M 0 0 v 0 l 25 0 l 50 0 l 25 0 l 25 0 l 75 0 l 25 0 l 12.5 0 l 62.5 0 l 50 0 l 50 0 V 0 H 0 Z"/>
+      </svg>
     </div>
 
     <div id="main-image" class="home-image">
@@ -78,7 +94,7 @@
       </div>
 
       <div class="container article-container">
-        <div class="ragged-edge">
+        <div class="ragged-edge visible-xs">
           <img src="images/medium-ragged-purple.png"/>
         </div>
 
@@ -144,7 +160,7 @@
           </div>
         </article>
 
-        <div class="ragged-edge bottom">
+        <div class="ragged-edge bottom visible-xs">
           <img src="images/medium-ragged.png"/>
         </div>
       </div>
@@ -273,6 +289,7 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
     <script src="bower_components/snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <!-- endbower -->
     <script src="bower_components/simplr-smoothscroll/lib/jquery.simplr.smoothscroll.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>

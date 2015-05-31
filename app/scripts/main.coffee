@@ -24,10 +24,14 @@ $(document).scroll ->
     navTop = 0
     navOpacity = 1
   else
-    navTop = -70
+    navTop = if isMobile then -50 else -70
     navOpacity = 0
 
   $('.top-nav.sticky').css
+    top: navTop
+    opacity: navOpacity
+
+  $('.top-nav-mobile').css
     top: navTop
     opacity: navOpacity
 
@@ -53,6 +57,38 @@ setupProjectAnimations = ->
 
     el.on 'mouseleave', ->
       path.animate( { 'path' : pathConfig.from }, speed, easing )
+
+setupMenuAnimation = ->
+  speed = 500
+  easing = mina.easeinout
+
+  el = $('.top-nav-mobile')
+
+  s = Snap(el.find('svg')[0])
+  path = s.select('path')
+
+  return unless path
+  pathConfig =
+    from: path.attr( 'd' )
+    to: el.attr('data-path-click')
+
+  el.click ->
+    isOpen = el.hasClass('open')
+    pathType = if isOpen then pathConfig.from else pathConfig.to
+    if isOpen
+      el.find('.inner').removeClass('open')
+      el.animate { 'background-color': 'rgba(255, 255, 255, 0)'}, speed
+      path.animate { 'path' : pathType }, speed, easing, ->
+        el.removeClass('open')
+        el.find('ul').hide()
+        el.find('svg').hide()
+    else
+      el.find('svg').show()
+      el.find('ul').show()
+      el.find('.inner').addClass('open')
+      el.addClass('open')
+      el.animate { 'background-color': 'rgba(255, 255, 255, 0.8)'}, speed
+      path.animate { 'path' : pathType }, speed, easing
 
 toProject = ->
   $('#main-image').height(400)
@@ -82,8 +118,8 @@ toHome = ->
   $(document).scrollTop(0)
 
 navigate = ->
-  toProject() if location.hash is '#project'
-  toHome()    if location.hash is ''
+  return toProject() if location.hash is '#project'
+  toHome()
 
 checkIsMobile = ->
   isMobile = $(window).width() <= 480
@@ -94,4 +130,5 @@ $(window).resize ->
 $(document).ready ->
   navigate()
   setupProjectAnimations()
+  setupMenuAnimation()
   checkIsMobile()

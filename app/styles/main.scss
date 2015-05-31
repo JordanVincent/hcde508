@@ -9,11 +9,11 @@ $images-path: "../images";
 $fonts-path: "./fonts";
 
 $purple: #515174;
+$purple-dark: #212D39;
 
 @import "font-faces.scss";
 @import "navigation.scss";
 @import "projects.scss";
-
 
 .container {
   max-width: 800px;

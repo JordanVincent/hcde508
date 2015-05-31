@@ -6,6 +6,7 @@
     "jquery-mousewheel": "~3.1.12",
     "simplr-smoothscroll": "https://github.com/simov/simplr-smoothscroll.git",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git",
-    "snap.svg": "~0.4.1"
+    "snap.svg": "~0.4.1",
+    "jquery-ui": "~1.11.4"
   }
 }

@@ -2,4 +2,70 @@
   .container {
     width: 100%;
   }
+
+  #main-image h1 {
+    font-size: 3em;
+    padding-top: 60px;
+  }
+
+   #main .article-container {
+    background-color: $purple;
+    position: relative;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    .ragged-edge {
+      margin: 0 -15px;
+      &.bottom {
+        bottom: 0;
+        top: initial;
+      }
+    }
+  }
+
+  #main {
+    article {
+      color: white;
+      .text {
+        width: 100%;
+      }
+      aside.quote {
+        width: 100%;
+        position: relative;
+        padding-left: 0;
+        margin: 40px 0;
+
+        .inner {
+          border: 0;
+          position: relative;
+          padding: 0 40px;
+          font-size: 1.8em;
+
+          &:before, &:after {
+            position: absolute;
+            font-size: 2em;
+          }
+
+          &:before {
+            content: open-quote;
+            left: 5px;
+            top: -10px;
+          }
+          &:after {
+            content: close-quote;
+            right: 5px;
+            bottom: -40px;
+          }
+        }
+      }
+    }
+
+    h2 {
+      padding: 0;
+      margin-top: 30px;
+      &:before {
+        display: none;
+      }
+    }
+  }
 }

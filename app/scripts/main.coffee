@@ -1,3 +1,5 @@
+isMobile = false
+
 $.srSmoothscroll
   step: 100
   speed: 100
@@ -14,7 +16,7 @@ $(document).scroll ->
 
   $('#main-image').css('top', top/3);
 
-  $('#main-image h1').css('padding-top', 200+top/5);
+  $('#main-image h1').css('padding-top', (if isMobile then 60 else 200) + top/5);
 
   $('#sub-header').css('top', top/2);
 
@@ -31,6 +33,26 @@ $(document).scroll ->
 
 $(window).bind 'hashchange', ->
   navigate()
+
+setupProjectAnimations = ->
+  speed = 250
+  easing = mina.easeinout
+
+  $('.project').each (idx, el) ->
+    el = $(el)
+
+    s = Snap(el.find('svg')[0])
+    path = s.select('path')
+    return unless path
+    pathConfig =
+      from: path.attr( 'd' )
+      to: el.attr('data-path-hover')
+
+    el.on 'mouseenter', ->
+      path.animate( { 'path' : pathConfig.to }, speed, easing )
+
+    el.on 'mouseleave', ->
+      path.animate( { 'path' : pathConfig.from }, speed, easing )
 
 toProject = ->
   $('#main-image').height(400)
@@ -63,24 +85,13 @@ navigate = ->
   toProject() if location.hash is '#project'
   toHome()    if location.hash is ''
 
+checkIsMobile = ->
+  isMobile = $(window).width() <= 480
+
+$(window).resize ->
+  checkIsMobile()
+
 $(document).ready ->
   navigate()
-
-  speed = 250
-  easing = mina.easeinout
-
-  $('.project').each (idx, el) ->
-    el = $(el)
-
-    s = Snap(el.find('svg')[0])
-    path = s.select('path')
-    return unless path
-    pathConfig =
-      from: path.attr( 'd' )
-      to: el.attr('data-path-hover')
-
-    el.on 'mouseenter', ->
-      path.animate( { 'path' : pathConfig.to }, speed, easing )
-
-    el.on 'mouseleave', ->
-      path.animate( { 'path' : pathConfig.from }, speed, easing )
+  setupProjectAnimations()
+  checkIsMobile()

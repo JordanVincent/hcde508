@@ -20,7 +20,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="top-nav">
+    <div class="top-nav hidden-xs">
       <div class="container">
         <div class="nav-element"><a href="#" class="about-link">Home</a></div><!--
         --><div class="nav-element"><a href="#" class="influences-link">Influences</a></div><!--
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="top-nav sticky">
+    <div class="top-nav sticky ">
       <div class="container">
         <div class="nav-element"><a href="#" class="about-link">Home</a></div><!--
         --><div class="nav-element"><a href="#" class="influences-link">Influences</a></div><!--
@@ -75,16 +75,28 @@
         <div class="intro home-specific"><b>I am a builder.</b> When I was young, I wanted to become a renowned architect: building grandiose museums, bridges or skyscrapers. Every Christmas I would get LEGO sets and spend hours carefully assembling the pieces together.</div>
 
         <div class="intro project-specific"><b>Dinofit</b> is a fitness app that keeps users motivated. It incorporates gaming concepts such as challenges, levels and points. Training plans are generated everyday based on the user’s feedbacks and previous workouts. It will soon be available on Android!</div>
+      </div>
+
+      <div class="container article-container">
+        <div class="ragged-edge">
+          <img src="images/medium-ragged-purple.png"/>
+        </div>
 
         <article class="home-specific">
 
-          <aside class="quote">
+          <aside class="quote hidden-xs">
             <div class="inner">At his great disappointment I became a programmer</div>
           </aside>
 
           <div class="text">
             <p>Then I grew up. It took me a long time to realize that you don’t need to be an architect to build, everyone can! Mechanical engineers, chemists and designers all spend their time improving our lives. There was something different with computer science though. Things were moving fast, people were creating, failing, and innovating! I had sworn to my father that I wouldn’t end up like him, a “programmer”. At his great disappointment I became a programmer, and I started a Master in Computer Science at INSA of Lyon.</p>
+          </div>
 
+          <aside class="quote visible-xs">
+            <div class="inner">At his great disappointment I became a programmer</div>
+          </aside>
+
+          <div class="text">
             <p>If silica is the new gold, once again California is an Eldorado. Some folks had created “startups” and developed amazing technologies. Something fascinated me. And before finishing my degree, I moved to San Francisco and worked with amazing people, helping them to launch SixDoors, a mobile ecommerce startup.There, I learned more about life in one year, than after 4 years in school. Some days, I had to leave my desk, rent a car, and deliver products by myself, because we didn’t have couriers. Other days, I was sent at the other side of the city to help a shop owner with our (buggy?) software. It was hard but I was living the dream. San Francisco became more than a city for me, it’s now a part of myself.</p>
           </div>
 
@@ -120,8 +132,8 @@
 
           <div class="text">
             <div class="row">
-              <div class="col-xs-6"><img src="images/project2.png"></div>
-              <div class="col-xs-6"><img src="images/project3.png"></div>
+              <div class="col-sm-6"><img src="images/project2.png"></div>
+              <div class="col-sm-6"><img src="images/project3.png"></div>
             </div>
           </div>
 
@@ -130,13 +142,19 @@
             <p>No data is hosted on the user’s phone and the whole logic is provided by the backend server. The Android app and the Ruby on Rails server interact with each other using a REST API.</p>
 
           </div>
-
         </article>
+
+        <div class="ragged-edge bottom">
+          <img src="images/medium-ragged.png"/>
+        </div>
+      </div>
+
+      <div class="container">
 
         <h2 id="projects-anchor" >Projects</h2>
 
         <div id="projects" class="row">
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #305274"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
@@ -152,7 +170,7 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #EE5544"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
@@ -168,7 +186,7 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #253554"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
@@ -184,7 +202,7 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 L 100 400 L 150 400 L 300 400 L 350 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #97041E"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
@@ -200,7 +218,7 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 150 400 L 200 400 L 300 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #232323"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >
@@ -216,7 +234,7 @@
             </div>
           </a>
 
-          <a href="#project" class="col-xs-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
+          <a href="#project" class="col-sm-4 project" data-path-hover="M 0 400 V 400 L 50 400 L 125 400 L 250 400 L 350 400 L 400 400 V 400 H 0 Z" >
             <div class="svg-wrapper">
               <div class="back" style="background-color: #BEBEBE"></div>
               <svg viewBox="0 0 400 400" preserveAspectRatio="none" >

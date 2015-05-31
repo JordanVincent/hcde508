@@ -96,10 +96,12 @@
       .text {
         width: 100%;
       }
-      aside.quote {
+      aside {
         width: 100%;
         position: relative;
         padding-left: 0;
+      }
+      aside.quote {
         margin: 40px 0;
 
         .inner {
@@ -125,6 +127,14 @@
           }
         }
       }
+
+      aside.caption {
+        margin: -10px 0 20px 0;
+        .inner {
+          color: white;
+          border: 0;
+        }
+      }
     }
 
     h2 {
@@ -133,6 +143,29 @@
       &:before {
         display: none;
       }
+    }
+
+    .slideshow {
+      overflow-x: auto;
+      margin-bottom: 20px;
+      .inner {
+        width: 500px;
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  #sub-header{
+    .project-logo {
+      width: 90px;
+      bottom: 20px;
+    }
+    .project-title {
+      font-size: 3em;
+      margin-left: 120px;
+      bottom: 25px;
     }
   }
 }

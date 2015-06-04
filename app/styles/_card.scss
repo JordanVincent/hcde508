@@ -1,11 +1,24 @@
 #cardSection {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
   background: $gray;
-  padding: 100px;
   -webkit-perspective: 1000;
+  overflow: hidden;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  background-color: $gray;
+  background-image: url(#{$images-path}/noise.png), radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
 
   $ratio: 0.6;
-  $widthResized: 875px*$ratio;
-  $heightResized: 500px*$ratio;
+  $cardWidth: 875px;
+  $cardHeight: 500px;
+  $widthResized: $cardWidth*$ratio;
+  $heightResized: $cardHeight*$ratio;
 
   .card {
     width: $widthResized;
@@ -14,7 +27,7 @@
     transition: all .5s;
     position: relative;
     transform-style: preserve-3d;
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
 
     .card-outer, .card-inner, .card-back {
       position: absolute;
@@ -24,9 +37,6 @@
       position: absolute;
       width: 100%;
       height: $heightResized;
-      background: black;
-      opacity: 0;
-      transition: opacity .5s;
       top: 0;
       left: 0;
       display: none;
@@ -88,14 +98,14 @@
         filter: drop-shadow(3px 0px 0px rgba(70, 70, 70, 1));
       }
       .shadow {
-        opacity: 1;
-        display: block;
+        
       }
     }
   }
 
   .controls {
     margin-top: 120px;
+    z-index: 1;
     #card3dBtn {
       width: 50px;
       height: 50px;
@@ -114,6 +124,26 @@
         background-image: url(#{$images-path}/scissors-active.png);
         box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
       }
+    }
+  }
+
+  .close {
+    text-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    opacity: 0.5;
+    font-size: 30px;
+    padding: 30px 40px;
+    z-index: 3;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      outline: 0;
     }
   }
 }

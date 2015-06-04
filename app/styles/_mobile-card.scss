@@ -1,0 +1,22 @@
+@media screen and (max-width: 480px) {
+  #cardSection {
+    $mobile-ratio: 0.3;
+
+    .card {
+      width: 875px*$mobile-ratio;
+      height: 500px*$mobile-ratio;
+      .shadow {
+        height: 500px*$mobile-ratio;
+        margin-left: -55px;
+        margin-top: 55px;
+      }
+      .card-inner {
+        top: 40px*$mobile-ratio;
+      }
+    }
+
+    .controls {
+      margin-top: 80px;
+    }
+  }
+}

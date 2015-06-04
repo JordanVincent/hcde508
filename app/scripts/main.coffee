@@ -124,10 +124,20 @@ navigate = ->
 checkIsMobile = ->
   isMobile = $(window).width() <= 480
 
-setupCardBtn = ->
+setupCard = ->
+  speed = 500
+
+  $('#footerImage').click ->
+    $('#cardSection').fadeIn().css('display', 'flex');
+
+  $('#cardSection .close').click ->
+    $('#cardSection').fadeOut()
+
   $('#card3dBtn').click ->
     $('#card3dBtn').toggleClass('active')
     $('#cardSection .card').toggleClass('built')
+    $shadow = $('#cardSection .shadow')
+    if $shadow.is(':visible') then $shadow.fadeOut(speed) else $shadow.fadeIn(speed)
 
 $(window).resize ->
   checkIsMobile()
@@ -137,4 +147,4 @@ $(document).ready ->
   setupProjectAnimations()
   setupMenuAnimation()
   checkIsMobile()
-  setupCardBtn()
+  setupCard()

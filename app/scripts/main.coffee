@@ -124,6 +124,11 @@ navigate = ->
 checkIsMobile = ->
   isMobile = $(window).width() <= 480
 
+setupCardBtn = ->
+  $('#card3dBtn').click ->
+    $('#card3dBtn').toggleClass('active')
+    $('#cardSection .card').toggleClass('built')
+
 $(window).resize ->
   checkIsMobile()
 
@@ -132,3 +137,4 @@ $(document).ready ->
   setupProjectAnimations()
   setupMenuAnimation()
   checkIsMobile()
+  setupCardBtn()

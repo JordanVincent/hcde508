@@ -1,0 +1,119 @@
+#cardSection {
+  background: $gray;
+  padding: 100px;
+  -webkit-perspective: 1000;
+
+  $ratio: 0.6;
+  $widthResized: 875px*$ratio;
+  $heightResized: 500px*$ratio;
+
+  .card {
+    width: $widthResized;
+    height: $heightResized;
+    margin: 0 auto;
+    transition: all .5s;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
+
+    .card-outer, .card-inner, .card-back {
+      position: absolute;
+    }
+
+    .shadow {
+      position: absolute;
+      width: 100%;
+      height: $heightResized;
+      background: black;
+      opacity: 0;
+      transition: opacity .5s;
+      top: 0;
+      left: 0;
+      display: none;
+      transform-origin: center bottom;
+      transform: matrix(1.262,0,-1.235,1.195,0,0);
+      margin-left: -110px;
+      margin-top: 110px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    .card-outer, .card-back {
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    $cardInnerWidth: 90.857%;
+
+    .card-inner {
+      width: $cardInnerWidth;
+      top: 40px*$ratio;
+      left: (100-$cardInnerWidth)/2;
+
+      transform-origin: center bottom;
+      transition: all .3s;
+      transition-delay: .2s;
+    }
+
+    .front, .back {
+      backface-visibility: hidden;
+    }
+
+    .front {
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateY(0deg);
+    }
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    &:hover {
+      transform: rotateY(180deg);
+      .front {
+      }
+      .back {
+      }
+    }
+
+    &.built {
+      transform: matrix(0.710,0.326,-0.148,0.940,0,0);
+      box-shadow: none;
+      .card-inner {
+        transform: matrix(1,0,-1,0.240,0,0);
+        filter: drop-shadow(8px 0px 0px #252536);
+
+      }
+      .card-outer {
+        filter: drop-shadow(3px 0px 0px rgba(70, 70, 70, 1));
+      }
+      .shadow {
+        opacity: 1;
+        display: block;
+      }
+    }
+  }
+
+  .controls {
+    margin-top: 120px;
+    #card3dBtn {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      display: block;
+      background-image: url(#{$images-path}/scissors.png);
+      background-size: 65%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: white;
+      border-radius: 100%;
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      &:active {
+        box-shadow: none;
+        background-image: url(#{$images-path}/scissors-active.png);
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

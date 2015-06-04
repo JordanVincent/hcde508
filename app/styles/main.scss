@@ -10,6 +10,7 @@ $fonts-path: "./fonts";
 
 $purple: #515174;
 $purple-dark: #212D39;
+$mobile-max-width: 768px;
 
 @import "font-faces.scss";
 @import "navigation.scss";
@@ -34,7 +35,7 @@ $purple-dark: #212D39;
 
   &.project-image {
     background-image: url(#{$images-path}/project-bg.png);
-    background-position: bottom;
+    background-position: bottom right;
   }
 
   h1 {

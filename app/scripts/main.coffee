@@ -1,4 +1,6 @@
 isMobile = false
+isHome = true
+mainImageHeight = 600
 
 $.srSmoothscroll
   step: 100
@@ -11,7 +13,7 @@ smoothScroll.init
   updateURL: false
   offset: 20
 
-$(document).scroll ->
+updateScroll = ->
   top = $(document).scrollTop()
 
   $('#main-image').css('top', top/3);
@@ -20,7 +22,7 @@ $(document).scroll ->
 
   $('#sub-header').css('top', top/2);
 
-  if top > 600
+  if top > mainImageHeight
     navTop = 0
     navOpacity = 1
   else
@@ -34,6 +36,9 @@ $(document).scroll ->
   $('.top-nav-mobile').css
     top: navTop
     opacity: navOpacity
+
+$(document).scroll ->
+  updateScroll()
 
 $(window).bind 'hashchange', ->
   navigate()
@@ -91,7 +96,7 @@ setupMenuAnimation = ->
       path.animate { 'path' : pathType }, speed, easing
 
 toProject = ->
-  $('#main-image').height(400)
+  setupMainImageSize()
   $('#main-image').removeClass('home-image').addClass('project-image')
   $('.nav-element a').removeClass('active')
 
@@ -104,7 +109,7 @@ toProject = ->
   $(document).scrollTop(0)
 
 toHome = ->
-  $('#main-image').height(600)
+  setupMainImageSize(true)
   $('#main-image').removeClass('project-image').addClass('home-image')
   $('.nav-element a').removeClass('active')
   $('.about-link').addClass('active')
@@ -118,11 +123,15 @@ toHome = ->
   $(document).scrollTop(0)
 
 navigate = ->
-  return toProject() if location.hash is '#project'
-  toHome()
+  if location.hash is '#project'
+    isHome = false
+    toProject()
+  else
+    isHome = true
+    toHome()
 
 checkIsMobile = ->
-  isMobile = $(window).width() <= 480
+  isMobile = $(window).width() <= 768
 
 setupCard = ->
   speed = 500
@@ -139,8 +148,19 @@ setupCard = ->
     $shadow = $('#cardSection .shadow')
     if $shadow.is(':visible') then $shadow.fadeOut(speed) else $shadow.fadeIn(speed)
 
+setupMainImageSize = ->
+  windowH = $(window).height()
+  height = 400
+  if isHome
+    height = if windowH > 600 then 600 else windowH
+
+  $('#main-image').height(height)
+  mainImageHeight = height
+
 $(window).resize ->
   checkIsMobile()
+  updateScroll()
+  setupMainImageSize()
 
 $(document).ready ->
   navigate()

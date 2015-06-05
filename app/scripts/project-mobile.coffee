@@ -1,5 +1,16 @@
 $(document).ready ->
+  $('.about-link').click (event) ->
+    $('#backdrop').fadeIn 400, ->
+        window.toHome()
+        $('#backdrop').fadeOut 400
+
   $('.project').click (event) ->
+
+    unless window.isMobile
+      return $('#backdrop').fadeIn 400, ->
+        window.toProject()
+        $('#backdrop').fadeOut 400
+
     $project = $(event.currentTarget)
 
     # snatch
@@ -8,7 +19,7 @@ $(document).ready ->
     $projectSnatcher.find('p').animate({opacity: 0})
     $projectSnatcher.css('z-index', 30)
     $('#backdrop').fadeIn 400, ->
-      $('.snatched').css({visibility: 'visible')
+      $('.snatched').css({visibility: 'visible'})
 
       # move
       scroll = $(document).scrollTop()
@@ -31,9 +42,9 @@ $(document).ready ->
         left: -22
 
       $projectSnatcher.find('.text-inner').css
-        width: '66%'
+        width: '62%'
       $projectSnatcher.find('.caption').css
-        width: '34%'
+        width: 120
 
       $projectSnatcher.find('h3').css({'font-family': 'MyriadProBlack'})
       $projectSnatcher.find('h3').animate

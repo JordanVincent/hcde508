@@ -123,6 +123,7 @@ window.toHome = ->
   # $(document).scrollTop(0)
 
 window.navigate = ->
+  return
   #if location.hash is '#project'
   if location.hash is '#projecdst'
     window.isHome = false
@@ -164,7 +165,8 @@ $(window).resize ->
   setupMainImageSize()
 
 $(document).ready ->
-  navigate()
+  toHome()
+  #navigate()
   setupProjectAnimations()
   setupMenuAnimation()
   checkIsMobile()

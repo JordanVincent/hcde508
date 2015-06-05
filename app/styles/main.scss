@@ -238,6 +238,7 @@ $mobile-max-width: 768px;
 .footer-image {
   margin-top: 50px;
   width: 100%;
+  cursor: pointer;
 }
 
 #backdrop {
@@ -250,6 +251,43 @@ $mobile-max-width: 768px;
   display: none;
   z-index: 20;
   opacity: 1;
+}
+
+#disabledInfo {
+  display: none;
+  position: fixed;
+  background-color: white;
+  width: 380px;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  background: $purple;
+  font-family: AvenirRoman;
+  font-size: 1.2em;
+
+  b {
+    font-family: MyriadProBlack;
+    font-weight: normal;
+    font-size: 1.2em;
+  }
+
+  a {
+    text-decoration: underline;
+    color: white;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  cursor: pointer;
 }
 
 @import "mobile.scss";

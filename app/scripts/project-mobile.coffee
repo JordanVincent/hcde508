@@ -51,3 +51,6 @@ $(document).ready ->
         'font-size': '3.5em'
       , 400, 'swing', ->
         $('#backdrop').add($projectSnatcher).fadeOut()
+
+  $('.disabled-link').click ->
+    $('#disabledInfo').fadeIn().delay(3000).fadeOut()

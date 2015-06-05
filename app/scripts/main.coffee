@@ -1,6 +1,6 @@
-isMobile = false
-isHome = true
-mainImageHeight = 600
+window.isMobile = false
+window.isHome = true
+window.mainImageHeight = 600
 
 $.srSmoothscroll
   step: 100
@@ -13,7 +13,7 @@ smoothScroll.init
   updateURL: false
   offset: 20
 
-updateScroll = ->
+window.updateScroll = ->
   top = $(document).scrollTop()
 
   $('#main-image').css('top', top/3);
@@ -43,7 +43,7 @@ $(document).scroll ->
 $(window).bind 'hashchange', ->
   navigate()
 
-setupProjectAnimations = ->
+window.setupProjectAnimations = ->
   speed = 250
   easing = mina.easeinout
 
@@ -63,7 +63,7 @@ setupProjectAnimations = ->
     el.on 'mouseleave', ->
       path.animate( { 'path' : pathConfig.from }, speed, easing )
 
-setupMenuAnimation = ->
+window.setupMenuAnimation = ->
   speed = 500
   easing = mina.easeinout
 
@@ -95,7 +95,7 @@ setupMenuAnimation = ->
       el.animate { 'background-color': 'rgba(255, 255, 255, 0.8)'}, speed
       path.animate { 'path' : pathType }, speed, easing
 
-toProject = ->
+window.toProject = ->
   setupMainImageSize()
   $('#main-image').removeClass('home-image').addClass('project-image')
   $('.nav-element a').removeClass('active')
@@ -108,7 +108,7 @@ toProject = ->
 
   $(document).scrollTop(0)
 
-toHome = ->
+window.toHome = ->
   setupMainImageSize(true)
   $('#main-image').removeClass('project-image').addClass('home-image')
   $('.nav-element a').removeClass('active')
@@ -120,20 +120,21 @@ toHome = ->
   $('.project-specific')
   .hide()
 
-  $(document).scrollTop(0)
+  # $(document).scrollTop(0)
 
-navigate = ->
-  if location.hash is '#project'
-    isHome = false
+window.navigate = ->
+  #if location.hash is '#project'
+  if location.hash is '#projecdst'
+    window.isHome = false
     toProject()
   else
-    isHome = true
+    window.isHome = true
     toHome()
 
-checkIsMobile = ->
-  isMobile = $(window).width() <= 768
+window.checkIsMobile = ->
+  window.isMobile = $(window).width() <= 768
 
-setupCard = ->
+window.setupCard = ->
   speed = 500
 
   $('#footerImage').click ->
@@ -148,14 +149,14 @@ setupCard = ->
     $shadow = $('#cardSection .shadow')
     if $shadow.is(':visible') then $shadow.fadeOut(speed) else $shadow.fadeIn(speed)
 
-setupMainImageSize = ->
+window.setupMainImageSize = ->
   windowH = $(window).height()
   height = 400
   if isHome
     height = if windowH > 600 then 600 else windowH
 
   $('#main-image').height(height)
-  mainImageHeight = height
+  window.mainImageHeight = height
 
 $(window).resize ->
   checkIsMobile()
@@ -168,3 +169,4 @@ $(document).ready ->
   setupMenuAnimation()
   checkIsMobile()
   setupCard()
+

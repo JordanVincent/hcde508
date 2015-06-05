@@ -171,7 +171,6 @@ $mobile-max-width: 768px;
 
 #sub-header {
   position: relative;
-  top: 0;
 
   .ragged-edge {
     opacity: .5;
@@ -239,6 +238,18 @@ $mobile-max-width: 768px;
 .footer-image {
   margin-top: 50px;
   width: 100%;
+}
+
+#backdrop {
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 20;
+  opacity: 1;
 }
 
 @import "mobile.scss";

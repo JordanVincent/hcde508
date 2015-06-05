@@ -1,6 +1,11 @@
 @media screen and (max-width: $mobile-max-width) {
-  #projects {
+  //#projects {
     .project {
+      transition: top 0s;
+
+      .svg-wrapper {
+        display: none;
+      }
 
       .caption, .text-inner {
         display: inline-block;
@@ -23,5 +28,5 @@
         color: $gray-dark;
       }
     }
-  }
+  //}
 }
